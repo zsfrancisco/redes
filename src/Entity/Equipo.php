@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +37,22 @@ class Equipo
      * @ORM\Column(type="string", length=255)
      */
     private $descripcion_equipo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Marca", inversedBy="equipos")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $marca_equipo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Registro", mappedBy="equipo")
+     */
+    private $registros;
+
+    public function __construct()
+    {
+        $this->registros = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -85,6 +103,49 @@ class Equipo
     public function setDescripcionEquipo(string $descripcion_equipo): self
     {
         $this->descripcion_equipo = $descripcion_equipo;
+
+        return $this;
+    }
+
+    public function getMarcaEquipo(): ?Marca
+    {
+        return $this->marca_equipo;
+    }
+
+    public function setMarcaEquipo(?Marca $marca_equipo): self
+    {
+        $this->marca_equipo = $marca_equipo;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Registro[]
+     */
+    public function getRegistros(): Collection
+    {
+        return $this->registros;
+    }
+
+    public function addRegistro(Registro $registro): self
+    {
+        if (!$this->registros->contains($registro)) {
+            $this->registros[] = $registro;
+            $registro->setEquipo($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRegistro(Registro $registro): self
+    {
+        if ($this->registros->contains($registro)) {
+            $this->registros->removeElement($registro);
+            // set the owning side to null (unless already changed)
+            if ($registro->getEquipo() === $this) {
+                $registro->setEquipo(null);
+            }
+        }
 
         return $this;
     }
