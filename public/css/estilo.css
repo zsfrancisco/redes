@@ -1,0 +1,113 @@
+.div1{
+    background-color:#B0C1D9;
+  }
+
+.div2{
+  background-color: #00173E;
+  }
+
+.mypadding1{
+  padding: 30px;
+}
+
+.mybody{
+  background-color: #EDEDF3;
+}
+
+.padding2 {
+  padding-bottom: 20px;
+}
+
+.inicioSesion {
+  border: 0;
+  background: none;
+  display: block;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 10px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.inicioSesion:hover{
+  background: #2ecc71;
+}
+
+.indexIniciarSesion{
+  background: #00173E;
+}
+
+.formIniciarSesion{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 400px;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  background: #00173E;
+  border-radius: 10px;
+}
+
+.formIniciarSesion h1, .formIniciarSesion label {
+  color: rgb(226, 216, 216);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.formIniciarSesion input[type="email"], .formIniciarSesion input[type="password"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 280px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.formIniciarSesion input[type="email"]:focus, .formIniciarSesion input[type="password"]:focus{
+  width: 300px;
+  border-color: #2ecc71;
+}
+
+.black{
+  background-color: black;
+}
+
+.footer{
+  background-color: #314946;
+  color: whitesmoke;
+}
+
+.row_ancha{
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.col-3 p {
+  font-size: smaller;
+}
+.col-3 a {
+  font-size: smaller;
+  padding: 0px;
+  color: whitesmoke;
+}
+
+.col-3 hr {
+  margin: 9px;
+  border-color: whitesmoke;
+}
+
+.col-3 img {
+  width: 16px;
+  height: 16px;
+}
